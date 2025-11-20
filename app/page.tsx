@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 
-// Feature component pentru carduri
 function Feature({ icon, title, desc }: { icon: string; title: string; desc: string }) {
   return (
     <div className="bg-white/10 rounded-2xl shadow-md p-6 flex flex-col items-center max-w-xs mx-auto hover:shadow-xl transition">
@@ -15,9 +14,7 @@ function Feature({ icon, title, desc }: { icon: string; title: string; desc: str
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 flex flex-col justify-center items-center px-2">
-      {/* Container central limitat la max 80% */}
       <div className="w-full max-w-5xl mx-auto py-16 text-center">
-        {/* Hero CTA */}
         <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-white drop-shadow-lg">
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-red-400 bg-clip-text text-transparent">
             PC Builder România & UK
@@ -32,7 +29,6 @@ export default function Home() {
         >
           Începe configurarea
         </Link>
-        {/* Features */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
           <Feature icon="💻" title="Prețuri Reale" desc="Vezi cele mai bune oferte din România și UK, actualizate zilnic." />
           <Feature icon="✅" title="Compatibilitate 100%" desc="Orice componentă este verificată automat pentru compatibilitate perfectă." />
@@ -40,7 +36,6 @@ export default function Home() {
           <Feature icon="⚡" title="Rapid și Simplu" desc="Configurezi și cumperi păstrând totul organizat și eficient." />
         </div>
       </div>
-      {/* Footer simplu la final */}
       <footer className="mt-auto py-4 text-white/70 text-sm text-center w-full">
         © 2025 PC Builder · Creat cu Next.js & Tailwind CSS
       </footer>
