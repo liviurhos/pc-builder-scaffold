@@ -14,7 +14,7 @@ function Feature({ icon, title, desc }: { icon: string; title: string; desc: str
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 flex flex-col justify-center items-center px-2">
-      <div className="w-full max-w-5xl mx-auto py-16 text-center">
+      <div className="w-[80%] max-w-6xl mx-auto py-16 text-center">
         <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-white drop-shadow-lg">
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-red-400 bg-clip-text text-transparent">
             PC Builder România & UK
