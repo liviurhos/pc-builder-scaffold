@@ -1,60 +1,21 @@
-// app/page.tsx – GRADIENT FORȚAT 100%
+// app/page.tsx – FINAL, 100% FUNCȚIONAL, FĂRĂ EROARE
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div 
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "0 1.5rem",
-        background: "linear-gradient(to bottom right, #dbeafe, #ffffff, #fee2e2)",
-      }}
-    >
-      <div style={{ textAlign: "center", maxWidth: "32rem" }}>
-        <h1 
-          style={{
-            fontSize: "3rem",
-            fontWeight: "bold",
-            marginBottom: "2rem",
-            background: "linear-gradient(to right, #2563eb, #dc2626)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-          }}
-        >
-          PC Builder România & UK
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-red-50 flex items-center justify-center px-6">
+      <div className="text-center max-w-5xl">
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-tight">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-red-600">
+            PC Builder România & UK
+          </span>
         </h1>
-        <p 
-          style={{
-            fontSize: "1.25rem",
-            color: "#374151",
-            marginBottom: "3rem",
-            maxWidth: "48rem",
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        >
+        <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto">
           Configurează-ți PC-ul perfect cu prețuri reale de la eMAG, PC Garage, Amazon UK, Currys și alții
         </p>
         <Link
           href="/builder"
-          style={{
-            display: "inline-block",
-            background: "linear-gradient(to right, #2563eb, #dc2626)",
-            color: "white",
-            fontWeight: "bold",
-            fontSize: "1.5rem",
-            padding: "2rem 4rem",
-            borderRadius: "2rem",
-            textDecoration: "none",
-            boxShadow: "0 10px 25px rgba(37, 99, 235, 0.3)",
-            transition: "transform 0.3s",
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
-          onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+          className="inline-block bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white font-bold text-2xl px-16 py-8 rounded-2xl shadow-2xl transform hover:scale-105 transition duration-300"
         >
           Începe Configurarea ACUM
         </Link>
