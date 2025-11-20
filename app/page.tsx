@@ -1,30 +1,17 @@
 import Link from "next/link";
-import Image from "next/image"; // dacă folosești imagine locală/importată!
-import BgSVG from "@/assets/bg-abstract.svg"; // exemplu SVG animat/abstract
 
 export default function Home() {
   return (
     <>
-      {/* Background stratificat premium */}
+      {/* Background animat modern, doar cu CSS */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        {/* Gradient animat */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0e204a]/30 via-purple-600/20 to-[#900015]/30 animate-gradient" />
-        {/* Imagine locală optimizată Next.js */}
-        <Image
-          src="/bg-pc.jpg"
-          alt="PC builder background"
-          fill
-          style={{ objectFit: "cover", filter: "blur(50px)", opacity: 0.5 }}
-          quality={80}
-        />
-        {/* Overlay SVG abstract animat */}
-        <div className="absolute inset-0 pointer-events-none opacity-30 animate-fadeIn">
-          <BgSVG />
-        </div>
-        {/* Overlay semi-transparent pentru contrast */}
+        {/* Gradient complex, animat */}
+        <div className="absolute inset-0 bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-blue-600 via-purple-600 to-red-600 
+                        animate-gradient-slow opacity-80 blur-2xl" />
+        {/* Suprapunere neagră pt. claritate/constrast */}
         <div className="absolute inset-0 bg-black/60" />
       </div>
-
+      
       {/* Conținut principal */}
       <main className="relative min-h-screen flex items-center justify-center px-6">
         <div className="text-center max-w-6xl mx-auto">
@@ -56,7 +43,30 @@ export default function Home() {
           </div>
         </div>
       </main>
-      {/* Adaugă clase animate-gradient animate-fadeIn sau keyframes în CSS/Tailwind pentru efecte premium */}
+
+      {/* Animatie CSS personalizata in tailwind.config.js sau global.css: */}
+      <style jsx global>{`
+        @keyframes gradient-slow {
+          0% {
+            filter: blur(45px);
+            opacity: 0.85;
+            background-position: 0% 50%;
+          }
+          50% {
+            filter: blur(65px);
+            opacity: 1;
+            background-position: 100% 50%;
+          }
+          100% {
+            filter: blur(45px);
+            opacity: 0.85;
+            background-position: 0% 50%;
+          }
+        }
+        .animate-gradient-slow {
+          animation: gradient-slow 14s ease-in-out infinite;
+        }
+      `}</style>
     </>
   );
 }
