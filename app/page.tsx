@@ -1,27 +1,49 @@
 "use client";
 import Link from "next/link";
 
+// Feature component pentru carduri
+function Feature({ icon, title, desc }: { icon: string; title: string; desc: string }) {
+  return (
+    <div className="bg-white/10 rounded-2xl shadow-md p-6 flex flex-col items-center max-w-xs mx-auto hover:shadow-xl transition">
+      <div className="text-4xl mb-2">{icon}</div>
+      <h3 className="font-bold text-lg mb-1 text-white">{title}</h3>
+      <p className="text-white/80 text-sm text-center">{desc}</p>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-800 to-purple-900 flex flex-col justify-center items-center px-6">
-      {/* Container central cu max 80% latime */}
-      <div className="w-full max-w-5xl text-center text-white">
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 flex flex-col justify-center items-center px-2">
+      {/* Container central limitat la max 80% */}
+      <div className="w-full max-w-5xl mx-auto py-16 text-center">
+        {/* Hero CTA */}
+        <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-white drop-shadow-lg">
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-red-400 bg-clip-text text-transparent">
             PC Builder România & UK
           </span>
         </h1>
-        <p className="text-lg md:text-2xl mb-8 font-medium drop-shadow-md max-w-3xl mx-auto">
-          Configurează-ți PC-ul visat cu prețuri reale și compatibilitate garantată. Soluție modulară rapidă, cu linkuri directe și actualizări zilnice!
+        <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow">
+          Configurează-ți PC-ul visat cu prețuri reale și compatibilitate garantată. Soluție modulară cu linkuri directe și actualizări zilnice!
         </p>
         <Link
           href="/builder"
-          className="inline-block bg-white text-gray-900 font-semibold text-xl rounded-2xl px-12 py-4 shadow-xl hover:bg-blue-600 hover:text-white transition"
-          aria-label="Începe să construiești PC-ul"
+          className="inline-block bg-white text-blue-900 font-bold text-xl rounded-2xl px-10 py-4 shadow-lg hover:bg-blue-600 hover:text-white transition duration-300"
         >
-          Începe să construiești
+          Începe configurarea
         </Link>
+        {/* Features */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+          <Feature icon="💻" title="Prețuri Reale" desc="Vezi cele mai bune oferte din România și UK, actualizate zilnic." />
+          <Feature icon="✅" title="Compatibilitate 100%" desc="Orice componentă este verificată automat pentru compatibilitate perfectă." />
+          <Feature icon="🔗" title="Linkuri Directe" desc="Acces instant la ofertă fără intermediari — totul rapid." />
+          <Feature icon="⚡" title="Rapid și Simplu" desc="Configurezi și cumperi păstrând totul organizat și eficient." />
+        </div>
       </div>
+      {/* Footer simplu la final */}
+      <footer className="mt-auto py-4 text-white/70 text-sm text-center w-full">
+        © 2025 PC Builder · Creat cu Next.js & Tailwind CSS
+      </footer>
     </div>
   );
 }
